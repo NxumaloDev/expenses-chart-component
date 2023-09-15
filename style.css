@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&display=swap');
+
+body {
+    padding: 2rem;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans';
+    background: var(--Very-pale-orange);
+
+    display: grid;
+    place-items: center;
+}
+
+:root {
+    --Soft-red: hsl(10, 79%, 65%);
+    --Cyan: hsl(186, 34%, 60%);
+
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+
+    --one: 1rem;
+}
+
+main {
+    display: grid;
+    gap: 1rem;
+}
+
+.balance-tab {
+    background: var(--Soft-red);
+    color: white;
+    display: flex;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.balance {
+    display: grid;
+    gap: .5rem;
+}
+
+.balance * {
+    margin: 0;
+}
+
+.balance p:last-of-type {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.graph-container {
+    border-radius: 10px;
+    padding: 1rem;
+    background: white;
+    display: grid;
+    gap: 1rem;
+}
+
+.graph-container h1 {
+    font-size: 1.5rem;
+    color: var(--Dark-brown);
+}
+
+.graph {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    position: relative;
+    color: var(--Medium-brown);
+    text-align: center;
+    padding-block: 1rem;
+}
+
+.graph div {
+    display: grid;
+    position: relative;
+}
+
+.graph button {
+    background: var(--Soft-red);
+    width: 2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.graph div > div {
+    top: -1.8rem;
+    left: -.3rem;
+    width: 2.5rem;
+    padding-inline: .1rem;
+    font-size: .8rem;
+    display: grid;
+    place-items: center;
+    color: white;
+    border-radius: 5px;
+    transition: all 200ms;
+    height: 1.5rem;
+    background: var(--Dark-brown);
+    position: absolute;
+    opacity: 0;
+}
+
+.graph button:hover {
+    background: hsla(10, 79%, 65%, .8);
+}
+
+.wednesday button {
+    background: var(--Cyan);
+}
+
+.wednesday button:hover {
+    background: hsla(186, 34%, 60%, .8);
+}
+
+.graph::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: hsla(28, 10%, 53%, .8);
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--Dark-brown);
+}
+
+.summary * {
+    margin: 0;
+}
+
+.summary p {
+    font-size: .8rem;
+    color: var(--Medium-brown);
+}
+
+.percent span {
+    font-weight: 700;
+}
+
+@media screen and (min-width: 375px) {
+    main {
+        width: 60vw;
+    }
+
+    .graph {
+        padding: 1rem;
+    }
+}
